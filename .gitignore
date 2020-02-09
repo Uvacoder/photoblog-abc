@@ -3,3 +3,6 @@ dist/
 
 # ignore the generated .eleventyignore
 .eleventyignore
+
+# Local Netlify folder
+.netlify
