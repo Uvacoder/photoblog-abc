@@ -1,0 +1,50 @@
+// global border-box behaviour
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    @include prefers-reduced-motion {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    overflow-wrap: anywhere;
+}
+
+// remove margins
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+hr, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    border: 0;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+// cleaner link underlines
+a {
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: .09rem;
+    text-underline-offset: 3px;
+}
+
+// responsive images by default
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

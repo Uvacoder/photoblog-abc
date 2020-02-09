@@ -1,0 +1,73 @@
+.main {
+    min-height: 100vh;
+
+    &__article {
+        background: $article-bg;
+        color: $article-color;
+        @include font-size($font-size-lg);
+        width: 100%;
+        max-width: 50rem;
+        margin: 0;
+        padding: 1rem;
+        .main--fullwidth & {
+            max-width: 100%;
+        }
+    }
+    &__nav {
+        background: $navigation-bg;
+        color: $navigation-color;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    &__footer {
+        background: $footer-bg;
+        color: $footer-color;
+        padding: .5rem 1rem;
+        @include font-size($font-size-sm);
+    }
+
+    @include breakpoint-up(sm) {
+        &__article {
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+    }
+
+    @include breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 20rem 1fr 40rem 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:    "navigation space-left main space-right"
+                                "navigation footer footer footer";
+        justify-content: space-between;
+        align-content: stretch;
+        &--fullwidth {
+            grid-template-columns: 20rem 1rem 1fr 1rem;
+        }
+        &__article {
+            grid-area: main;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+        &__nav {
+            grid-area: navigation;
+        }
+        &__footer {
+            grid-area: footer;
+        }
+    }
+
+    @include breakpoint-up(lg) {
+        grid-template-columns: 25rem 1fr 50rem 1fr;
+        &--fullwidth {
+            grid-template-columns: 25rem 1rem 1fr 1rem;
+        }
+        &__article {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            padding: 4rem 3rem;
+        }
+    }
+}

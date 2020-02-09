@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" dir="{{ site.dir }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="/css/main.css?v={{ site.version }}">
+    <script src="/js/main.js?v={{ site.version }}" defer></script>
+
+    {% include "components/seo.njk" %}
+</head>
+<body>
+    <main class="main main--{{ main_class }}">
+        <aside class="main__nav">
+            {% include "components/navigation.njk" %}
+        </aside>
+        <article class="main__article content" id="content">
+            {{ content | safe }}
+        </article>
+        <footer class="main__footer footer">
+            {% include "components/footer.njk" %}
+        </footer>
+    </main>
+</body>
+</html>

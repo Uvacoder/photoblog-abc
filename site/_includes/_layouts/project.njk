@@ -1,0 +1,11 @@
+---
+layout: html
+main_class: fullwidth
+permalink: "{{ page.fileSlug | stripDate }}/index.html"
+---
+
+{{ content }}
+
+{% for photo in photos %}
+    <img src="/photos/{{ photo }}" class="img-fluid">
+{% endfor %}

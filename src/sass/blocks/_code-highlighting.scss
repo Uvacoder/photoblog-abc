@@ -1,0 +1,68 @@
+// some theme options
+
+// @import "../../../node_modules/prismjs/themes/prism-twilight";
+@import "../../../node_modules/prism-themes/themes/prism-a11y-dark";
+// @import "../../../node_modules/prism-themes/themes/prism-hopscotch";
+// @import "../../../node_modules/prism-themes/themes/prism-darcula";
+
+// the articles use the prism language "bash" for shell sessions, so we include the $ sign before each line
+// i'm not using the "shell-session" language, because i want to be able to copy lines without the $
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: $font-family-mono;
+    display: block;
+    counter-reset: line-number;
+    @include font-size($font-size-sm);
+    @include breakpoint-up(sm) {
+        @include font-size($font-size-base);
+    }
+
+    // unused: line numbering
+    // .highlight-line {
+    //     counter-increment: line-number;
+    //     &::before {
+    //         content: counter(line-number, decimal-leading-zero) " ";
+    //     }
+    // }
+    // .highlight-line-active {
+    //     &::before {
+    //         color: map-get($theme-colors, "blue");
+    //         left: -.5rem;
+    // }
+
+    .highlight-line-active, .highlight-line-add, .highlight-line-remove {
+        display: inline-block;
+        width: 100%;
+    }
+    .highlight-line-active {
+        background-color: rgba(map-get($theme-colors, "blue"), .1);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -.125rem;
+            width: .125rem;
+            height: 100%;
+            background-color: map-get($theme-colors, "blue");
+        }
+    }
+    .highlight-line-add {
+        background-color: rgba(map-get($theme-colors, "green"), .4);
+        text-decoration: none;
+    }
+    .highlight-line-remove {
+        background-color: rgba(map-get($theme-colors, "red"), .4);
+    }
+}
+code.language-bash, pre.language-bash {
+    .highlight-line {
+        &::before {
+            content: "$" " ";
+        }
+    }
+    .highlight-line-remove {
+        &::before {
+            content: unset;
+        }
+    }
+}

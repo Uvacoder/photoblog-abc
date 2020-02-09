@@ -1,0 +1,83 @@
+.skip-to-content {
+    color: inherit;
+    &:hover, &:focus {
+        color: inherit;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.post-footer {
+    margin-top: 5rem;
+    border-top: 1px solid $gray-300;
+    padding-top: 1rem;
+    @include stack(1rem);
+}
+
+.back-to-top {
+    text-align: center;
+    &__link {
+        &, &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
+    &__icon {
+        width: 2.5rem;
+        transition: transform 250ms ease-out;
+        &:hover, &:focus {
+            transform: scale(1.3);
+            transition: transform 250ms ease-out;
+        }
+    }
+}
+
+.continue-reading {
+    @include font-size($font-size-sm);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    &__part {
+        flex: 1 1 auto;
+    }
+    &__prev {
+        text-align: left;
+        margin-right: auto;
+        padding-right: 1rem;
+    }
+    &__next {
+        margin-left: auto;
+        text-align: right;
+    }
+    &__label {
+        font-weight: $font-weight-medium;
+        display: block;
+    }
+}
+
+.section-anchor {
+    h2 > & {
+        display: none;
+    }
+    h2:hover > & {
+        display: initial;
+    }
+    &, &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+
+.sidenote {
+    display: block;
+    padding: .5rem 1rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    @include font-size($font-size-base);
+    @each $name, $color in $sidenote-colors {
+        &--#{$name} {
+            border-left-color: $color;
+            background: rgba($color, $sidenote-bg-alpha);
+        }
+    }
+}

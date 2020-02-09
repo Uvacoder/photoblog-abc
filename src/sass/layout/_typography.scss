@@ -1,0 +1,61 @@
+// body & text defaults
+body {
+    background: $body-bg;
+    color: $body-color;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-normal;
+    font-size: 1rem;
+    scroll-behavior: smooth;
+    text-rendering: auto;
+    line-height: $line-height-base;
+}
+
+// headlines
+h1, h2, h3, h4, h5, h6 {
+    line-height: $line-height-headlines;
+    font-weight: $font-weight-bold;
+}
+h1 { @include font-size(2.5rem); }
+h2 { @include font-size(1.5rem); }
+h3 { @include font-size(1.25rem); }
+h4 { @include font-size(1.125rem); }
+h5 { @include font-size(1rem); }
+h6 { @include font-size(0.875rem); }
+
+// links
+a {
+    color: $link-color;
+    &:hover, &:focus {
+        color: $link-hover-color;
+    }
+}
+
+// horizontal lines
+hr {
+    color: inherit;
+    border-top: 1px solid currentColor;
+    opacity: .5;
+}
+
+// code
+code, pre, kbd, samp {
+    font-family: $font-family-mono;
+    font-size: .875em;
+}
+// inline code (code blocks will be wrapped in pre tags)
+:not(pre) > code {
+    color: $code-color;
+    background-color: rgba($code-color, .15);
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
+// main content area
+.content {
+    @include stack(1.25rem);
+    @include stack-before-headlines(2.5rem);
+
+    // > p:first-of-type::first-line {
+    //     font-variant: small-caps;
+    // }
+}

@@ -1,0 +1,125 @@
+// colors
+
+$white: #ffffff;
+$gray-100: #fcf9f5;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #444444;
+$gray-800: #333333;
+$gray-900: #212529;
+$black: #000000;
+
+$colors-nature: (
+    "blue": #7EC6F2,
+    "green": #83A603,
+    "yellow": #F2E205,
+    "orange": #F2B705,
+    "red": #BF4904,
+);
+$colors-pastell: (
+    "blue": #A2F2DC,
+    "green": #C7F2B3,
+    "yellow": #E6E1AC,
+    "orange": #E6D5AC,
+    "red": #FFBFBF,
+);
+$theme-colors: $colors-nature;
+
+// typography
+
+$font-family-sans-serif:
+    "Roboto",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    Helvetica,
+    Arial,
+    sans-serif,
+    // Emoji fonts
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+$font-family-mono:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    "Lucida Console",
+    "Ubuntu Mono",
+    Menlo,
+    Monaco,
+    Courier,
+    "Courier New",
+    monospace;
+
+$font-size-base: 1rem;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+
+$line-height-sm: 1.5;
+$line-height-base: 1.8;
+$line-height-lg: 2;
+$line-height-headlines: 1.25;
+
+$link-color: inherit;
+$link-hover-color: $gray-700;
+
+// $code-color: #322391;
+$code-color: #B3271F;
+// $code-color: #5B6E09;
+
+$rfs-base-value: 1rem;
+
+// components / utilities
+
+$stack-default-margin: 1rem;
+
+// main sections
+
+$body-bg: $gray-100;
+$body-color: $black;
+
+$article-bg: $white;
+$article-color: inherit;
+
+$navigation-bg: $gray-800;
+$navigation-color: $white;
+
+$footer-bg: $gray-400;
+$footer-color: inherit;
+
+// responsive breakpoints
+
+$breakpoints: (
+    sm: 50rem,
+    md: 65rem,
+    lg: 80rem,
+);
+
+
+// navigation & header
+
+$mobile-header-height: 4rem;
+
+
+// sidenotes
+$sidenote-colors: (
+    "info": map-get($theme-colors, "blue"),
+    "success": map-get($theme-colors, "green"),
+    "warning": map-get($theme-colors, "red"),
+);
+$sidenote-bg-alpha: .4;

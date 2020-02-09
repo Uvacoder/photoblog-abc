@@ -1,0 +1,48 @@
+<div class="header">
+    <button class="header__burger hamburger hamburger--arrow" type="button" id="navigation-button"
+        aria-controls="navigation-menu" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only" id="navigation-label">{{ translations.nav_button_label }}</span>
+        <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+</div>
+
+<nav class="navigation" id="navigation-menu" tabindex="-1" aria-label="{{ translations.nav_menu_label }}">
+    <a href="#content" class="skip-to-content sr-only-focusable">{{ translations.main_content_link }}</a>
+    {% for section in collections.postTree %}
+        <section class="navigation__section">
+            {% set section_id = 'section-' + section.name %}
+            {% if section.title %}
+                <h4 class="navigation__headline" id="{{ section_id }}">
+                    {{- section.title -}}
+                </h4>
+            {% endif %}
+            <ol class="navigation__list" aria-describedby="{{ section_id }}">
+                {% for post in section.posts %}
+                    {% set isCurrentPage = post.url === page.url %}
+                    <li class="navigation__item">
+                        <a href="{{ '#content' if isCurrentPage else post.url }}" class="navigation__link"
+                            {{ 'aria-current="page"' if isCurrentPage }}>
+                            {{- post.data.menu_title or post.data.title or post.url -}}
+                        </a>
+                        {% if post.url === page.url %}
+                            {% set pageSections = content | findSections %}
+                            {% if pageSections.length %}
+                                <ol class="navigation__subnav">
+                                    {% for subsection in pageSections %}
+                                        <li class="navigation__subnav-item">
+                                            <a class="navigation__subnav-link" href="#{{ subsection.id }}">
+                                                {{- subsection.textOnly -}}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ol>
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ol>
+        </section>
+    {% endfor %}
+</nav>
