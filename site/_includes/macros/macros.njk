@@ -1,0 +1,11 @@
+{% macro image(image, classes = [], lazy = true, sizes = ['100vw'], srcset = []) %}
+{% set src = image if (image | is_string) else image.name %}
+{% set srcPath = '/photos/' + src %}
+<img src="/photos/{{ srcPath }}"
+    {%- if image.alt %} alt="{{ image.alt }}"{% endif %}
+    {%- if image.title %} title="{{ image.title }}"{% endif %}
+    {%- if classes %} class="{{ classes | implodeTruthy(', ') }}"{% endif %}
+    {%- if srcset %} srcset="{{ srcPath | widthsToSrcset(srcset) }}"{% endif %}
+    {%- if sizes %} sizes="{{ sizes }}"{% endif %}
+    {%- if lazy %} loading="lazy"{% endif %}>
+{% endmacro %}

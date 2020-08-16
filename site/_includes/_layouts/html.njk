@@ -1,4 +1,5 @@
 ---
+width: fullwidth
 content_class: default
 ---
 
@@ -15,7 +16,7 @@ content_class: default
     {% include "components/seo.njk" %}
 </head>
 <body>
-    <main class="main main--{{ main_class }}">
+    <main class="main main--{{ width }}">
         <aside class="main__nav">
             {% include "components/navigation.njk" %}
         </aside>

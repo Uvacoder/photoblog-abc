@@ -1,9 +1,0 @@
-{% macro image(image, classes = [], lazy = true, sizes = ['100vw']) %}
-    {% set src = image if (image | is_string) else image.name %}
-    <img src="/photos/{{ src }}"
-        {%- if image.alt %} alt="{{ image.alt }}"{% endif %}
-        {%- if image.title %} title="{{ image.title }}"{% endif %}
-        {%- if classes %} class="{{ classes | implodeTruthy(', ') }}"{% endif %}
-        {%- if sizes %} sizes="{{ sizes | implodeTruthy(', ') }}"{% endif %}
-        {%- if lazy %} loading="lazy"{% endif %}>
-{% endmacro %}

@@ -5,8 +5,8 @@ tags: project
 image: edinburgh_01.jpg
 ---
 
+{% import "macros/photos.njk" as macros with context %}
+
 I went to Edinburgh in 2018.
 
-{% for photo in photos.edinburgh %}
-    <img src="/photos/{{ photo }}" class="img-fluid">
-{% endfor %}
+{{ macros.list(photos.edinburgh) }}

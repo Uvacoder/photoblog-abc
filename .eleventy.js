@@ -18,6 +18,12 @@ module.exports = eleventyConfig => {
     });
     eleventyConfig.setLibrary('md', markdownLib);
 
+    eleventyConfig.addFilter(v => console.log(v));
+
+    eleventyConfig.addFilter('widthsToSrcset', (src, widths) => widths.reduce((carry, width) => {
+        return `${carry}${carry ? ', ' : ''}${src}?nf_resize=fit&w=${width} ${width}w`;
+    }, ''));
+
     eleventyConfig.addFilter('firstNItems', (arr, n = 1) => arr.slice(0, n));
     eleventyConfig.addFilter('implodeTruthy', (arr, glue = ', ') => arr.filter(item => !!item).join(glue));
     eleventyConfig.addFilter('is_string', s => typeof s === 'string');

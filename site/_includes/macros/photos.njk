@@ -1,0 +1,18 @@
+{% macro list(photos, size = "fullwidth") %}
+{% import "macros/macros.njk" as macros %}
+<div class="photo-list">
+    {%- for entry in photos -%}
+        <picture class="photo-list__picture">
+            {{- macros.image(
+                entry,
+                [
+                    'photo-list__image'
+                ],
+                true,
+                responsive_images.photoList[size],
+                responsive_images.photoList.srcset
+            ) -}}
+        </picture>
+    {%- endfor -%}
+</div>
+{% endmacro %}
