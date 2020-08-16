@@ -11,6 +11,6 @@ module.exports = {
     photoList: {
         fullwidth: buildSizesQuery(containers.fullwidth),
         halfwidth: buildSizesQuery(containers.halfwidth),
-        srcset: [360, 480, 540, 720, 960, 1080, 1600, 2400]
+        srcset: [360, 480, 540, 720, 960, 1200, 1600, 2400]
     },
 }
