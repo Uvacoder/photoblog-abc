@@ -1,0 +1,6 @@
+.homepage-content {
+    @include stack(5rem);
+    &__section {
+        @include stack(1rem);
+    }
+}

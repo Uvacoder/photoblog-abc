@@ -2,7 +2,64 @@
 title: Homepage
 layout: html
 main_class: fullwidth
+content_class: homepage-content
 permalink: /
 tags: homepage
 ---
 
+{% import "macros.njk" as macros %}
+
+<h1>Photography by Moritz L'Hoest</h1>
+
+<section class="homepage-content__section">
+    <h2>Latest photos</h2>
+    <div class="simple-grid">
+        {% for entry in blog | firstNItems(6) %}
+            {% set isTeaser = loop.last %}
+            <picture class="simple-grid__content teaser">
+                {{ macros.image(
+                    entry.image, [
+                        'simple-grid__image',
+                        'teaser__image' if isTeaser
+                    ],
+                    true
+                ) }}
+                {% if isTeaser %}
+                    <p class="teaser__content">
+                        <a href="/blog" class="teaser__link">
+                            To the photo blog
+                        </a>
+                    </p>
+                {% endif %}
+            </picture>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="homepage-content__section">
+    <h2>Photos by subject</h2>
+    <div class="simple-grid">
+        {% for subject in collections.subjects %}
+            <div class="simple-grid__content">
+                <picture class="simple-grid__picture">
+                    {{ macros.image(subject.data.image, ['simple-grid__image']) }}
+                </picture>
+                <h3>{{ subject.data.title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="homepage-content__section">
+    <h2>Photos by project</h2>
+    <div class="simple-grid">
+        {% for project in collections.projects %}
+            <div class="simple-grid__content">
+                <picture class="simple-grid__picture">
+                    {{ macros.image(project.data.image, ['simple-grid__image'])}}
+                </picture>
+                <h3>{{ project.data.title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</section>

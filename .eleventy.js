@@ -18,6 +18,10 @@ module.exports = eleventyConfig => {
     });
     eleventyConfig.setLibrary('md', markdownLib);
 
+    eleventyConfig.addFilter('firstNItems', (arr, n = 1) => arr.slice(0, n));
+    eleventyConfig.addFilter('implodeTruthy', (arr, glue = ', ') => arr.filter(item => !!item).join(glue));
+    eleventyConfig.addFilter('is_string', s => typeof s === 'string');
+    eleventyConfig.addFilter('is_object', s => typeof s === 'object');
     eleventyConfig.addFilter('stripDate', utils.stripDate);
     eleventyConfig.addFilter('findSections', utils.findSections);
     eleventyConfig.addShortcode('fontawesome', utils.fontawesome);
@@ -35,6 +39,17 @@ module.exports = eleventyConfig => {
         'site/photos': 'photos',
     });
 
+    const photosBySubject = collection => collection.getFilteredByTag('category').sort((a, b) => {
+        return a.data.sort - b.data.sort;
+    });
+
+    const photosByProject = collection => collection.getFilteredByTag('project').sort((a, b) => {
+        return b.date - a.date
+    });
+
+    eleventyConfig.addCollection('subjects', c => photosBySubject(c));
+    eleventyConfig.addCollection('projects', c => photosByProject(c));
+
     eleventyConfig.addCollection('postTree', collection => {
         return [
             {
@@ -46,15 +61,11 @@ module.exports = eleventyConfig => {
             },
             {
                 title: 'Photos by subject',
-                posts: collection.getFilteredByTag('category').sort((a, b) => {
-                    return a.data.sort - b.data.sort;
-                }),
+                posts: photosBySubject(collection),
             },
             {
                 title: 'Photos by project',
-                posts: collection.getFilteredByTag('project').sort((a, b) => {
-                    return a.date - b.date
-                }),
+                posts: photosByProject(collection),
             }
         ];
     });

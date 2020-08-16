@@ -14,7 +14,12 @@
 // blocks
 @import "blocks/code-highlighting";
 @import "blocks/blocks";
+@import "blocks/grid";
 
 // components
 @import "components/navigation";
 @import "components/footer";
+
+// pages
+@import "pages/blog";
+@import "pages/home";

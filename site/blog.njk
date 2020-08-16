@@ -1,7 +1,37 @@
 ---
 title: Recent Photos
 layout: html
-main_class: fullwidth
+main_class: halfwidth
 tags: blog
 ---
 
+{% import "macros.njk" as macros %}
+
+
+<div class="blog">
+    {% for entry in blog %}
+        <section class="blog-entry">
+            {% if entry.date %}
+                <time class="blog-entry__date">{{ entry.date }}</time>
+            {% endif %}
+            <figure class="blog-entry__figure">
+                {{ macros.image(
+                    entry.image,
+                    ['blog-entry__image'],
+                    loop.first
+                ) }}
+                {% if entry.caption %}
+                    <figcaption class="blog-entry__caption">
+                        {{- entry.caption -}}
+                    </figcaption>
+                {% endif %}
+            </figure>
+            {% if entry.link %}
+                <a class="blog-entry__link" href="{{ entry.link.url }}">
+                    {%- fontawesome "external-link-alt", "solid", ["blog-entry__link-icon"] -%}
+                    {{- entry.link.text -}}
+                </a>
+            {% endif %}
+        </section>
+    {% endfor %}
+</div>

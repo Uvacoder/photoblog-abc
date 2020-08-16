@@ -1,0 +1,38 @@
+.simple-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 3rem 2rem;
+
+    // content wrapper
+    &__content {
+        @include stack(.5rem);
+    }
+}
+
+
+.teaser {
+    background: $black;
+    position: relative;
+    &__image {
+        opacity: .4;
+    }
+    &__content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem;
+    }
+    &__link {
+        color: $white;
+        @extend .stretched-link;
+        &:hover, &:focus {
+            color: darken($white, 10%);
+        }
+    }
+}

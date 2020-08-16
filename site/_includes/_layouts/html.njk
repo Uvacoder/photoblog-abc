@@ -1,3 +1,7 @@
+---
+content_class: default
+---
+
 <!DOCTYPE html>
 <html lang="{{ site.lang }}" dir="{{ site.dir }}">
 <head>
@@ -15,7 +19,7 @@
         <aside class="main__nav">
             {% include "components/navigation.njk" %}
         </aside>
-        <article class="main__article content" id="content">
+        <article class="main__article content {{ content_class }}" id="content">
             {{ content | safe }}
         </article>
         <footer class="main__footer footer">
