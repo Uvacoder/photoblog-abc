@@ -9,4 +9,4 @@ image: edinburgh_01.jpg
 
 I went to Edinburgh in 2018.
 
-{{ macros.list(photos.edinburgh) }}
+{{ macros.list(photos.edinburgh, 'halfwidth') }}
