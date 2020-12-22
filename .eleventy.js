@@ -32,6 +32,8 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter('findSections', utils.findSections);
     eleventyConfig.addShortcode('fontawesome', utils.fontawesome);
 
+    eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
+
     // syntax highlighting
     // const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
     // eleventyConfig.addPlugin(syntaxHighlight, {

@@ -12,18 +12,17 @@
     <a href="#content" class="skip-to-content sr-only-focusable">{{ translations.main_content_link }}</a>
     {% for section in collections.postTree %}
         <section class="navigation__section">
-            {% set section_id = 'section-' + section.name %}
             {% if section.title %}
-                <h4 class="navigation__headline" id="{{ section_id }}">
+                <h4 class="navigation__headline">
                     {{- section.title -}}
                 </h4>
             {% endif %}
-            <ol class="navigation__list" aria-describedby="{{ section_id }}">
+            <ol class="navigation__list">
                 {% for post in section.posts %}
                     {% set isCurrentPage = post.url === page.url %}
                     <li class="navigation__item">
                         <a href="{{ '#content' if isCurrentPage else post.url }}" class="navigation__link"
-                            {{ 'aria-current="page"' if isCurrentPage }}>
+                            {{ 'aria-current="page"'|safe if isCurrentPage }}>
                             {{- post.data.menu_title or post.data.title or post.url -}}
                         </a>
                         {% if post.url === page.url %}

@@ -1,3 +1,26 @@
 .photo-list {
     @include stack(3rem);
 }
+
+
+.two-columns {
+    columns: 1;
+    @include breakpoint-up (sm) {
+        columns: 2
+    }
+    column-gap: 2rem;
+    @include stack(3rem);
+}
+
+
+.three-columns {
+    columns: 1;
+    @include breakpoint-up (sm) {
+        columns: 2
+    }
+    @include breakpoint-up (lg) {
+        columns: 3;
+    }
+    column-gap: 2rem;
+    @include stack(3rem);
+}

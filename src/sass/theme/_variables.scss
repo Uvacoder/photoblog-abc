@@ -2,7 +2,7 @@
 
 $white: #ffffff;
 $gray-100: #fcf9f5;
-$gray-200: #e9ecef;
+$gray-200: #e1e1e1;
 $gray-300: #dee2e6;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
@@ -11,6 +11,11 @@ $gray-700: #444444;
 $gray-800: #333333;
 $gray-900: #212529;
 $black: #000000;
+
+$primary: #33607C;
+// $primary: #85C0D7;
+// $primary: #8A9D47;
+// $primary: #E29148;
 
 $colors-nature: (
     "blue": #7EC6F2,
@@ -75,7 +80,7 @@ $line-height-base: 1.8;
 $line-height-lg: 2;
 $line-height-headlines: 1.25;
 
-$link-color: inherit;
+$link-color: $primary;
 $link-hover-color: $gray-700;
 
 // $code-color: #322391;
@@ -90,7 +95,8 @@ $stack-default-margin: 1rem;
 
 // main sections
 
-$body-bg: $white;
+$body-bg: linear-gradient(to bottom, $primary 16rem, $gray-200 16rem);
+// $body-bg: linear-gradient(to bottom, $primary 16rem, lighten($primary, 55%) 16rem);
 $body-color: $black;
 
 $article-bg: $white;
@@ -99,7 +105,7 @@ $article-color: inherit;
 $navigation-bg: $gray-800;
 $navigation-color: $white;
 
-$footer-bg: $gray-400;
+$footer-bg: $white;
 $footer-color: inherit;
 
 // responsive breakpoints
@@ -107,7 +113,7 @@ $footer-color: inherit;
 $breakpoints: (
     sm: 50rem,
     md: 65rem,
-    lg: 80rem,
+    lg: 82rem,
 );
 
 

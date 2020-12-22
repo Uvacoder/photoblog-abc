@@ -1,18 +1,81 @@
-{% macro list(photos, size = "fullwidth") %}
-{% import "macros/macros.njk" as macros %}
+{% macro image(image, classes = [], lazy = false, sizes = ['100vw'], srcset = []) %}
+{% set src = image if (image | is_string) else image.name %}
+{% set srcPath = '/photos/' + src %}
+<img src="{{ srcPath }}"
+    {%- if image.alt %} alt="{{ image.alt }}"{% endif %}
+    {%- if image.title %} title="{{ image.title }}"{% endif %}
+    {%- if classes %} class="{{ classes | implodeTruthy(', ') }}"{% endif %}
+    {%- if srcset %} srcset="{{ srcPath | widthsToSrcset(srcset) }}"{% endif %}
+    {%- if sizes %} sizes="{{ sizes }}"{% endif %}
+    {%- if lazy %} loading="lazy"{% endif %}>
+{% endmacro %}
+
+{% macro figure(image, base_class = 'figure', lazy = false, sizes = ['100vw'], srcset = []) %}
+{% import "macros/photos.njk" as macros %}
+<figure class="{{ base_class }}__figure">
+    {{- macros.image(
+        image,
+        [base_class + '__image'],
+        lazy,
+        sizes,
+        srcset
+    ) -}}
+    {%- if image.caption -%}
+        <figcaption class="{{ base_class }}__caption">
+            {{- image.caption -}}
+        </figcaption>
+    {%- endif -%}
+</figure>
+{% endmacro %}
+
+{% macro list(photos, size = "full") %}
+{% import "macros/photos.njk" as macros %}
 <div class="photo-list">
     {%- for entry in photos -%}
-        <picture class="photo-list__picture">
+        <figure class="photo-list__figure">
             {{- macros.image(
                 entry,
-                [
-                    'photo-list__image'
-                ],
-                true,
-                responsive_images.photoList[size],
-                responsive_images.photoList.srcset
+                ['photo-list__image'],
+                not loop.first,
+                responsive_images.basic[size].sizes,
+                responsive_images.basic[size].srcset
             ) -}}
-        </picture>
+            {%- if entry.caption -%}
+                <figcaption class="photo-list__caption">
+                    {{- entry.caption -}}
+                </figcaption>
+            {%- endif -%}
+        </figure>
+    {%- endfor -%}
+</div>
+{% endmacro %}
+
+
+{% macro three_columns(photos, size = "full") %}
+{% import "macros/photos.njk" as macros %}
+<div class="three-columns">
+    {%- for entry in photos -%}
+        {{- macros.figure(
+            entry,
+            'three-columns',
+            not loop.first,
+            responsive_images.threeColumns[size].sizes,
+            responsive_images.threeColumns[size].srcset
+        ) -}}
+        {# <figure class="three-columns__figure">
+            {{- macros.image(
+                entry,
+                ['three-columns__image'],
+                not loop.first,
+                responsive_images.threeColumns[size].sizes,
+                responsive_images.threeColumns[size].srcset
+            ) -}}
+            {%- if entry.caption -%}
+                <figcaption class="three-columns__caption">
+                    {{- entry.caption -}}
+                </figcaption>
+            {%- endif -%}
+        </figure> #}
     {%- endfor -%}
 </div>
 {% endmacro %}

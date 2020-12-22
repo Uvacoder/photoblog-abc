@@ -50,6 +50,16 @@ code, pre, kbd, samp {
     border-radius: .25rem;
 }
 
+// global figure & caption styling
+figure {
+    break-inside: avoid;
+    figcaption {
+        @include font-size($font-size-sm);
+        margin-top: .5rem;
+    }
+}
+
+
 // main content area
 .content {
     @include stack(1.25rem);

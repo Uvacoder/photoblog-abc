@@ -1,18 +1,23 @@
 .blog {
-    @include stack(4rem);
+    @include stack(6rem);
 }
 
 .blog-entry {
     &__date {
+        width: max-content;
+        border-bottom: 4px solid $primary;
         display: block;
-        @include font-size($font-size-lg);
+        @include font-size($font-size-xl);
         font-weight: $font-weight-bold;
         margin-bottom: .5rem;
     }
     &__caption {
+        @include font-size($font-size-base);
         margin-top: .5rem;
     }
     &__link {
+        @include font-size($font-size-base);
+        font-weight: $font-weight-bold;
         display: block;
         margin-top: .375rem;
     }

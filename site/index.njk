@@ -6,12 +6,12 @@ permalink: /
 tags: homepage
 ---
 
-{% import "macros/macros.njk" as macros %}
+{% import "macros/photos.njk" as macros %}
 
 <h1>Photography by Moritz L'Hoest</h1>
 
 <section class="homepage-content__section">
-    <h2>Latest photos</h2>
+    <h2 id="latest-photos">Latest photos</h2>
     <div class="simple-grid">
         {% for entry in blog | firstNItems(6) %}
             {% set isTeaser = loop.last %}
@@ -36,7 +36,7 @@ tags: homepage
 </section>
 
 <section class="homepage-content__section">
-    <h2>Photos by subject</h2>
+    <h2 id="photos-by-subject">Photos by subject</h2>
     <div class="simple-grid">
         {% for subject in collections.subjects %}
             <div class="simple-grid__content">
@@ -50,7 +50,7 @@ tags: homepage
 </section>
 
 <section class="homepage-content__section">
-    <h2>Photos by project</h2>
+    <h2 id="photos-by-project">Photos by project</h2>
     <div class="simple-grid">
         {% for project in collections.projects %}
             <div class="simple-grid__content">
