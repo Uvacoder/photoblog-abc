@@ -18,8 +18,8 @@ tags: blog
                 entry.caption if entry.caption else entry.image.caption,
                 'blog-entry',
                 not loop.first,
-                responsive_images.basic[width].sizes,
-                responsive_images.basic[width].srcset,
+                responsive_images.oneColumn[width].sizes,
+                responsive_images.oneColumn[width].srcset,
                 true
             ) }}
             {% if entry.link %}
