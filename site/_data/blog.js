@@ -69,7 +69,7 @@ module.exports = [
     {
         date: '2019-10-09Z',
         image: {
-            name: '.jpg',
+            name: 'paris_2019_11.jpg',
             alt: 'A wide shot of the Louvre\'s pyramid entrance, shot from the upper floors so you can see the square surrounding it.',
         },
         caption: 'I took this from inside the Louvre, looking over the pyramid entrance on a rainy day. The smugdes in the lower left are rain drops on the window.',
@@ -82,7 +82,7 @@ module.exports = [
     {
         date: '2019-10-09Z',
         image: {
-            name: '.jpg',
+            name: 'paris_2019_09.jpg',
             alt: 'A black-and-white photo of a marble statue of a woman holding a pidgeon',
         },
         caption: 'A statue in a little alcove in the Louvre.',
@@ -129,7 +129,7 @@ module.exports = [
     {
         date: '2019-03-08',
         image: {
-            name: '.jpg',
+            name: 'den_haag_07.jpg',
             alt: 'A black-and-white photo of frothy waves approaching the shore, with a lighthouse shining in the background.',
         },
         link: {
