@@ -4,5 +4,6 @@ dist/
 # ignore the generated .eleventyignore
 .eleventyignore
 
-# Local Netlify folder
+# Local cache folders folder
 .netlify
+.cache
