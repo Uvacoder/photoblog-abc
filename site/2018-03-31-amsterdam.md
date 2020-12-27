@@ -1,11 +1,11 @@
 ---
-title: Sheep at the Rhine
+title: Amsterdam
 layout: project
 tags: project
 width: wide
-image: sheep_rhine_05.jpg
+image: amsterdam_01.jpg
 ---
 
 {% import "macros/photos.njk" as macros with context %}
 
-{{ macros.two_columns(photos.sheep_2020, width) }}
+{{ macros.one_column(photos.amsterdam, width) }}

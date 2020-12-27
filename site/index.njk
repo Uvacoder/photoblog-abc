@@ -7,8 +7,8 @@ permalink: /
 tags: homepage
 ---
 
-{% import "macros/photos.njk" as macros %}
-{% import "macros/utils.njk" as utils %}
+{% import "macros/photos.njk" as macros with context %}
+{% import "macros/utils.njk" as utils with context %}
 
 <h1>Photography by Moritz L'Hoest</h1>
 
@@ -23,7 +23,8 @@ tags: homepage
                 false,
                 responsive_images.threeColumns[width].sizes,
                 responsive_images.threeColumns[width].srcset,
-                not loop.first
+                not loop.first,
+                true
             ) }}
         {% endfor %}
     </div>

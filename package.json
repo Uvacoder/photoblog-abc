@@ -12,13 +12,21 @@
     },
     "license": "UNLICENSED",
     "author": "MoritzLost <info@herebedragons.world>",
+    "browserslist": [
+        "last 2 Firefox versions",
+        "last 2 Chrome versions",
+        "last 1 Safari versions",
+        "not IE>0"
+    ],
     "scripts": {
-        "build": "npm run build:eleventy && npm run build:sass",
+        "build": "npm run build:eleventy && npm run build:sass && npm run build:parcel",
         "build:eleventy": "eleventy",
         "build:sass": "node-sass --output-style=compressed --omit-source-map-url src/sass --output=dist/css/",
+        "build:parcel": "parcel build --out-dir dist/js/ --public-url /js/ src/js/main.js",
         "start": "npm-run-all build:sass -p watch:*",
         "watch:eleventy": "eleventy --serve",
-        "watch:sass": "node-sass --watch --output-style=expanded --source-maps=true src/sass --output=dist/css"
+        "watch:sass": "node-sass --watch --output-style=expanded --source-maps=true src/sass --output=dist/css",
+        "watch:parcel": "parcel watch --out-dir dist/js/ --public-url /js/ src/js/main.js"
     },
     "dependencies": {
         "@11ty/eleventy": "^0.11.1",
@@ -29,8 +37,10 @@
         "markdown-it": "^12.0.4",
         "markdown-it-anchor": "^6.0.1",
         "node-sass": "^5.0.0",
+        "parcel-bundler": "^1.12.4",
         "prism-themes": "^1.5.0",
-        "rfs": "^9.0.3"
+        "rfs": "^9.0.3",
+        "tobii": "^2.0.0-alpha"
     },
     "devDependencies": {
         "npm-run-all": "^4.1.5"

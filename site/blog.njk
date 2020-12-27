@@ -1,11 +1,11 @@
 ---
-title: Photo Blog
+title: Photo blog
 layout: html
 width: base
 tags: blog
 ---
 
-{% import "macros/photos.njk" as macros %}
+{% import "macros/photos.njk" as macros with context %}
 
 <div class="blog">
     {% for entry in blog %}
@@ -19,7 +19,8 @@ tags: blog
                 'blog-entry',
                 not loop.first,
                 responsive_images.basic[width].sizes,
-                responsive_images.basic[width].srcset
+                responsive_images.basic[width].srcset,
+                true
             ) }}
             {% if entry.link %}
                 <a class="blog-entry__link" href="{{ entry.link.url }}">

@@ -1,0 +1,14 @@
+---
+title: My favourite photos
+layout: html
+tags: favourites
+menu_title: My favourites
+width: full
+image: rainy_day_cologne_01.jpg
+images:
+    - den_haag_07.jpg
+---
+
+{% import "macros/photos.njk" as macros with context %}
+
+{{ macros.three_columns(images, width) }}

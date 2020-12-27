@@ -20,8 +20,10 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addFilter(v => console.log(v));
 
+    const imageWidth = (image, width) => `${image}?nf_resize=fit&w=${width}`;
+    eleventyConfig.addFilter('imageWidth', imageWidth);
     eleventyConfig.addFilter('widthsToSrcset', (src, widths) => widths.reduce((carry, width) => {
-        return `${carry}${carry ? ', ' : ''}${src}?nf_resize=fit&w=${width} ${width}w`;
+        return `${carry}${carry ? ', ' : ''}${imageWidth(src, width)} ${width}w`;
     }, ''));
 
     eleventyConfig.addFilter('firstNItems', (arr, n = 1) => arr.slice(0, n));
@@ -35,6 +37,8 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
     eleventyConfig.addFilter('date_iso', date => (new Date(date).toISOString().split('T')[0]));
 
+    eleventyConfig.addFilter('log', v => console.log(v));
+
     // syntax highlighting
     // const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
     // eleventyConfig.addPlugin(syntaxHighlight, {
@@ -43,7 +47,6 @@ module.exports = eleventyConfig => {
     // });
 
     eleventyConfig.addPassthroughCopy({
-        'site/_js': `js`,
         'site/_headers': '_headers',
         'site/photos': 'photos',
     });

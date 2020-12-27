@@ -4,4 +4,10 @@ layout: category
 tags: category
 sort: 3
 image: amsterdam_02.jpg
+images:
+    - den_haag_06.jpg
 ---
+
+{% import "macros/photos.njk" as macros with context %}
+
+{{ macros.three_columns(images, width) }}
