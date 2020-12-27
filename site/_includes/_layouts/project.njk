@@ -4,4 +4,13 @@ width: wide
 permalink: "{{ page.fileSlug | stripDate }}/index.html"
 ---
 
+<header class="project-header">
+    <h1 class="project-header__headline">{{ headline|default(title) }}</h1>
+    {% if page.date %}
+        <time class="project-header__time" datetime="{{ page.date| date_iso }}">
+            {{ page.date | date }}
+        </time>
+    {% endif %}
+</header>
+
 {{ content | safe }}

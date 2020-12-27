@@ -1,64 +1,65 @@
 ---
 title: Homepage
 layout: html
+width: full
 content_class: homepage-content
 permalink: /
 tags: homepage
 ---
 
 {% import "macros/photos.njk" as macros %}
+{% import "macros/utils.njk" as utils %}
 
 <h1>Photography by Moritz L'Hoest</h1>
 
 <section class="homepage-content__section">
     <h2 id="latest-photos">Latest photos</h2>
-    <div class="simple-grid">
+    <div class="teaser-grid">
         {% for entry in blog | firstNItems(6) %}
-            {% set isTeaser = loop.last %}
-            <picture class="simple-grid__content teaser">
-                {{ macros.image(
-                    entry.image, [
-                        'simple-grid__image',
-                        'teaser__image' if isTeaser
-                    ],
-                    true
-                ) }}
-                {% if isTeaser %}
-                    <p class="teaser__content">
-                        <a href="/blog" class="teaser__link">
-                            To the photo blog
-                        </a>
-                    </p>
-                {% endif %}
-            </picture>
+            {{ macros.teaser(
+                entry.image,
+                false,
+                entry.date,
+                false,
+                responsive_images.threeColumns[width].sizes,
+                responsive_images.threeColumns[width].srcset,
+                not loop.first
+            ) }}
         {% endfor %}
     </div>
+    {{ utils.link('/blog/', 'View older photos in the photo blog', 'solid/arrow-right', ['teaser-grid__link']) }}
 </section>
 
 <section class="homepage-content__section">
     <h2 id="photos-by-subject">Photos by subject</h2>
-    <div class="simple-grid">
-        {% for subject in collections.subjects %}
-            <div class="simple-grid__content">
-                <picture class="simple-grid__picture">
-                    {{ macros.image(subject.data.image, ['simple-grid__image']) }}
-                </picture>
-                <h3>{{ subject.data.title }}</h3>
-            </div>
+    <div class="teaser-grid">
+        {% for subject in collections.subjects_favourites %}
+            {{ macros.teaser(
+                subject.data.image,
+                false,
+                false,
+                { url: subject.url, text: subject.data.title, icon: 'solid/arrow-right' },
+                responsive_images.threeColumns[width].sizes,
+                responsive_images.threeColumns[width].srcset,
+                true
+            ) }}
         {% endfor %}
     </div>
 </section>
 
 <section class="homepage-content__section">
     <h2 id="photos-by-project">Photos by project</h2>
-    <div class="simple-grid">
+    <div class="teaser-grid">
         {% for project in collections.projects %}
-            <div class="simple-grid__content">
-                <picture class="simple-grid__picture">
-                    {{ macros.image(project.data.image, ['simple-grid__image'])}}
-                </picture>
-                <h3>{{ project.data.title }}</h3>
-            </div>
+            {{ macros.teaser(
+                project.data.image,
+                false,
+                false,
+                { url: project.url, text: project.data.title, icon: 'solid/arrow-right' },
+                responsive_images.threeColumns[width].sizes,
+                responsive_images.threeColumns[width].srcset,
+                true
+            ) }}
         {% endfor %}
     </div>
 </section>

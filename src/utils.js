@@ -26,10 +26,10 @@ const readableSlug = title => encodeURIComponent(title.toString().toLowerCase()
     .replace(/^-+/, '')
     .replace(/-+$/, ''));
 
-const fontawesome = (icon, style = 'regular', classes = ['fontawesome'], alt = '') => {
+const fontawesome = (icon, classes = ['fontawesome'], alt = '') => {
     const attributes = `class="${classes.join(' ')}" alt="${alt}"`;
     const svg = fs.readFileSync(
-        path.join(__dirname, '../node_modules/@fortawesome/fontawesome-free/svgs', style, `${icon}.svg`),
+        path.join(__dirname, '../node_modules/@fortawesome/fontawesome-free/svgs', `${icon}.svg`),
         'utf8'
     );
     return svg.replace(/^\<svg/, `<svg ${attributes}`);

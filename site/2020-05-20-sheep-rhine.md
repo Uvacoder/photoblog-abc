@@ -1,0 +1,11 @@
+---
+title: Sheep at the Rhine
+layout: project
+tags: project
+width: wide
+image: sheep_rhine_05.jpg
+---
+
+{% import "macros/photos.njk" as macros with context %}
+
+{{ macros.two_columns(photos.sheep_2020, width) }}

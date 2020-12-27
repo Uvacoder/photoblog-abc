@@ -1,0 +1,13 @@
+.icon-link {
+    @include font-size($font-size-base);
+    font-weight: $font-weight-bold;
+    display: block;
+    &__icon {
+        height: 1.25rem;
+        margin-right: .5rem;
+        vertical-align: sub;
+        svg, path {
+            fill: currentColor;
+        }
+    }
+}

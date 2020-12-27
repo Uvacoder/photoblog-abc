@@ -10,72 +10,111 @@
     {%- if lazy %} loading="lazy"{% endif %}>
 {% endmacro %}
 
-{% macro figure(image, base_class = 'figure', lazy = false, sizes = ['100vw'], srcset = []) %}
-{% import "macros/photos.njk" as macros %}
+{% macro figure(base_image, caption = null, base_class = 'figure', lazy = false, sizes = ['100vw'], srcset = []) %}
+{% set caption = caption if caption else base_image.caption %}
 <figure class="{{ base_class }}__figure">
-    {{- macros.image(
-        image,
+    {{- image(
+        base_image,
         [base_class + '__image'],
         lazy,
         sizes,
         srcset
     ) -}}
-    {%- if image.caption -%}
+    {%- if caption -%}
         <figcaption class="{{ base_class }}__caption">
-            {{- image.caption -}}
+            {{- caption -}}
         </figcaption>
     {%- endif -%}
 </figure>
 {% endmacro %}
 
-{% macro list(photos, size = "full") %}
-{% import "macros/photos.njk" as macros %}
-<div class="photo-list">
+{% macro one_column(photos, size = "full") %}
+<div class="one-column">
     {%- for entry in photos -%}
-        <figure class="photo-list__figure">
-            {{- macros.image(
-                entry,
-                ['photo-list__image'],
-                not loop.first,
-                responsive_images.basic[size].sizes,
-                responsive_images.basic[size].srcset
-            ) -}}
-            {%- if entry.caption -%}
-                <figcaption class="photo-list__caption">
-                    {{- entry.caption -}}
-                </figcaption>
-            {%- endif -%}
-        </figure>
+        {{- figure(
+            entry,
+            entry.caption,
+            'one-column',
+            not loop.first,
+            responsive_images.oneColumn[size].sizes,
+            responsive_images.oneColumn[size].srcset
+        ) -}}
     {%- endfor -%}
 </div>
 {% endmacro %}
 
-
 {% macro three_columns(photos, size = "full") %}
-{% import "macros/photos.njk" as macros %}
 <div class="three-columns">
     {%- for entry in photos -%}
-        {{- macros.figure(
+        {{- figure(
             entry,
+            entry.caption,
             'three-columns',
             not loop.first,
             responsive_images.threeColumns[size].sizes,
             responsive_images.threeColumns[size].srcset
         ) -}}
-        {# <figure class="three-columns__figure">
-            {{- macros.image(
-                entry,
-                ['three-columns__image'],
-                not loop.first,
-                responsive_images.threeColumns[size].sizes,
-                responsive_images.threeColumns[size].srcset
-            ) -}}
-            {%- if entry.caption -%}
-                <figcaption class="three-columns__caption">
-                    {{- entry.caption -}}
-                </figcaption>
-            {%- endif -%}
-        </figure> #}
+    {%- endfor -%}
+</div>
+{% endmacro %}
+
+{% macro two_columns(photos, size = "full") %}
+<div class="two-columns">
+    {%- for entry in photos -%}
+        {{- figure(
+            entry,
+            entry.caption,
+            'two-columns',
+            not loop.first,
+            responsive_images.twoColumns[size].sizes,
+            responsive_images.twoColumns[size].srcset
+        ) -}}
+    {%- endfor -%}
+</div>
+{% endmacro %}
+
+{% macro teaser(base_image, caption = false, date = false, link = false, sizes = [], srcset = [], lazy = false) %}
+{% import "macros/utils.njk" as utils %}
+{%- set caption = caption|default(base_image.caption, true) -%}
+<figure class="teaser">
+    {{- image(
+        base_image, [
+            'teaser__image'
+        ],
+        lazy,
+        sizes,
+        srcset
+    ) }}
+    {%- if caption -%}
+        <figcaption class="teaser__caption">
+            {{- caption -}}
+        </figcaption>
+    {%- endif -%}
+    {%- if date -%}
+        <footer class="teaser__footer">
+            <time class="teaser__time" datetime="{{ date | date_iso }}">
+                {{- date | date -}}
+            </time>
+        </footer>
+    {%- endif -%}
+    {%- if link -%}
+        {{ utils.link(link.url, link.text, link.icon, ['teaser__link']) }}
+    {%- endif -%}
+</figure>
+{% endmacro %}
+
+{% macro teaser_grid(photos, size = "full") %}
+<div class="teaser-grid">
+    {%- for entry in photos -%}
+        {{- teaser(
+            entry.image,
+            entry.caption|default(entry.image.caption),
+            entry.date,
+            entry.link,
+            responsive_images.threeColumn[size].sizes,
+            responsive_images.threeColumn[size].srcset,
+            not loop.first
+        ) -}}
     {%- endfor -%}
 </div>
 {% endmacro %}

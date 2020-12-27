@@ -33,6 +33,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.addShortcode('fontawesome', utils.fontawesome);
 
     eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
+    eleventyConfig.addFilter('date_iso', date => (new Date(date).toISOString().split('T')[0]));
 
     // syntax highlighting
     // const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -50,12 +51,16 @@ module.exports = eleventyConfig => {
     const photosBySubject = collection => collection.getFilteredByTag('category').sort((a, b) => {
         return a.data.sort - b.data.sort;
     });
-
+    const photosBySubjectWithFavourites = collection => ([
+        ...photosBySubject(collection),
+        ...(collection.getFilteredByTag('favourites'))
+    ]);
     const photosByProject = collection => collection.getFilteredByTag('project').sort((a, b) => {
         return b.date - a.date
     });
 
     eleventyConfig.addCollection('subjects', c => photosBySubject(c));
+    eleventyConfig.addCollection('subjects_favourites', c => photosBySubjectWithFavourites(c));
     eleventyConfig.addCollection('projects', c => photosByProject(c));
 
     eleventyConfig.addCollection('postTree', collection => {
@@ -65,6 +70,7 @@ module.exports = eleventyConfig => {
                 posts: [
                     ...collection.getFilteredByTag('homepage'),
                     ...collection.getFilteredByTag('blog'),
+                    ...collection.getFilteredByTag('favourites'),
                 ],
             },
             {

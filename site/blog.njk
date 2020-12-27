@@ -15,6 +15,7 @@ tags: blog
             {% endif %}
             {{ macros.figure(
                 entry.image,
+                entry.caption if entry.caption else entry.image.caption,
                 'blog-entry',
                 not loop.first,
                 responsive_images.basic[width].sizes,
@@ -22,7 +23,7 @@ tags: blog
             ) }}
             {% if entry.link %}
                 <a class="blog-entry__link" href="{{ entry.link.url }}">
-                    {%- fontawesome "arrow-right", "solid", ["blog-entry__link-icon"] -%}
+                    {%- fontawesome entry.link.icon|default("solid/arrow-right"), ["blog-entry__link-icon"] -%}
                     {{- entry.link.text -}}
                 </a>
             {% endif %}

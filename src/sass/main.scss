@@ -12,15 +12,17 @@
 @import "layout/layout";
 
 // blocks
-@import "blocks/code-highlighting";
 @import "blocks/blocks";
-@import "blocks/grid";
+@import "blocks/code-highlighting";
+@import "blocks/links";
+@import "blocks/photos";
+@import "blocks/teaser";
 
 // components
 @import "components/footer";
 @import "components/navigation";
-@import "components/photos";
 
 // pages
 @import "pages/blog";
 @import "pages/home";
+@import "pages/project";
