@@ -1,4 +1,5 @@
 const edinburgh = require('./photos/edinburgh.json');
+const red_butterfly = require('./photos/red_butterfly.json');
 
 module.exports = [
     // {
@@ -24,10 +25,7 @@ module.exports = [
     },
     {
         date: '2020-09-18Z',
-        image: {
-            name: 'blog/20200918.jpg',
-            alt: 'A close-up of a butterfly sitting on a purple flower, showing it\'s orange wings with markings that are reminiscent of a pair of eyes.',
-        },
+        image: red_butterfly[0],
         caption: 'It\'s rare for a butterfly to sit still long enough for me to take a close-up.',
     },
     {
@@ -267,4 +265,12 @@ module.exports = [
         },
         caption: 'Experimenting with candlelight portraits.',
     },
+    {
+        date: '2016-07-16Z',
+        image: {
+            name: 'blog/20160716.jpg',
+            alt: 'Long exposure of a purple fireworks over the Rhine with the Cologne Cathedral.',
+        },
+        caption: 'From the yearly fireworks event ‘Kölner Lichter’.',
+    }
 ];

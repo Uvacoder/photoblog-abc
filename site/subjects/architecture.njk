@@ -1,0 +1,19 @@
+---js
+{
+    title: "City & Architecture",
+    layout: "subject",
+    tags: "subject",
+    sort: 3,
+    image: "amsterdam_02.jpg",
+    eleventyComputed: {
+        images: data => {
+            return [
+                data.photos.den_haag[5],
+            ];
+        }
+    }
+}
+---
+
+{% import "macros/photos.njk" as macros with context %}
+{{ macros.three_columns(images, width) }}

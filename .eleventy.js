@@ -1,6 +1,8 @@
 
 const markdownIt = require('markdown-it');
 const utils = require('./src/utils');
+const image_size = require('image-size');
+const path = require('path');
 
 module.exports = eleventyConfig => {
     // custom markdown library with automatic anchors for h2 headings
@@ -17,8 +19,6 @@ module.exports = eleventyConfig => {
         permalinkSymbol: '#',
     });
     eleventyConfig.setLibrary('md', markdownLib);
-
-    eleventyConfig.addFilter(v => console.log(v));
 
     const imageWidth = (image, width) => `${image}?nf_resize=fit&w=${width}`;
     eleventyConfig.addFilter('imageWidth', imageWidth);
@@ -37,6 +37,8 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
     eleventyConfig.addFilter('date_iso', date => (new Date(date).toISOString().split('T')[0]));
 
+    eleventyConfig.addFilter('image_size', src => image_size(path.join(__dirname, 'site', src)));
+
     eleventyConfig.addFilter('log', v => console.log(v));
 
     // syntax highlighting
@@ -51,7 +53,7 @@ module.exports = eleventyConfig => {
         'site/photos': 'photos',
     });
 
-    const photosBySubject = collection => collection.getFilteredByTag('category').sort((a, b) => {
+    const photosBySubject = collection => collection.getFilteredByTag('subject').sort((a, b) => {
         return a.data.sort - b.data.sort;
     });
     const photosBySubjectWithFavourites = collection => ([
