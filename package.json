@@ -26,14 +26,14 @@
         "start": "npm-run-all build:sass -p watch:*",
         "watch:eleventy": "eleventy --serve",
         "watch:sass": "node-sass --watch --output-style=expanded --source-maps=true src/sass --output=dist/css",
-        "watch:parcel": "parcel watch --out-dir dist/js/ --public-url /js/ src/js/main.js"
+        "watch:parcel": "parcel watch --out-dir dist/js/ --public-url /js/ src/js/main.js",
+        "get_image_sizes": "node ./scripts/get_image_sizes > site/_data/image_sizes.json"
     },
     "dependencies": {
         "@11ty/eleventy": "^0.11.1",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
         "@fortawesome/fontawesome-free": "^5.15.1",
         "hamburgers": "^1.1.3",
-        "image-size": "^0.9.3",
         "jsdom": "^16.4.0",
         "markdown-it": "^12.0.4",
         "markdown-it-anchor": "^6.0.1",
@@ -44,6 +44,7 @@
         "tobii": "^2.0.0-alpha"
     },
     "devDependencies": {
+        "image-size": "^0.9.3",
         "npm-run-all": "^4.1.5"
     }
 }

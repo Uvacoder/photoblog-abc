@@ -1,7 +1,6 @@
 
 const markdownIt = require('markdown-it');
 const utils = require('./src/utils');
-const image_size = require('image-size');
 const path = require('path');
 
 module.exports = eleventyConfig => {
@@ -36,8 +35,6 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
     eleventyConfig.addFilter('date_iso', date => (new Date(date).toISOString().split('T')[0]));
-
-    eleventyConfig.addFilter('image_size', src => image_size(path.join(__dirname, 'site', src)));
 
     eleventyConfig.addFilter('log', v => console.log(v));
 

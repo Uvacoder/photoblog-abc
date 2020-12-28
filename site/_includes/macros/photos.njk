@@ -1,11 +1,13 @@
 {% macro image(image, classes = [], lazy = false, sizes = ['100vw'], srcset = [], lightbox = false) %}
 {% set src = image if (image | is_string) else image.name %}
 {% set srcPath = '/photos/' + src %}
-{% set dimensions = srcPath | image_size %}
+{% set imageDimensionsKey = 'photos/' + src %}
+{% set dimensions = image_sizes[imageDimensionsKey] if imageDimensionsKey in image_sizes else null %}
 {%- if lightbox -%}
     <a href="{{ srcPath | imageWidth(config.lightbox.imageWidth) }}" class="lightbox">
 {%- endif -%}
-<img src="{{ srcPath }}" width="{{ dimensions.width }}" height="{{ dimensions.height }}"
+<img src="{{ srcPath }}"
+    {%- if dimensions %} width="{{ dimensions.width }}" height="{{ dimensions.height }}"{% endif %}
     {%- if image.alt %} alt="{{ image.alt }}"{% endif %}
     {%- if image.title %} title="{{ image.title }}"{% endif %}
     {%- if classes %} class="{{ classes | implodeTruthy(', ') }}"{% endif %}
