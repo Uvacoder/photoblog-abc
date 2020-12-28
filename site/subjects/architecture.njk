@@ -1,19 +1,43 @@
----js
-{
-    title: "City & Architecture",
-    layout: "subject",
-    tags: "subject",
-    sort: 3,
-    image: "amsterdam_02.jpg",
-    eleventyComputed: {
-        images: data => {
-            return [
-                data.photos.den_haag[5],
-            ];
-        }
-    }
-}
+---
+title: City & Architecture
+layout: subject
+tags: subject
+sort: 3
+image: amsterdam_02.jpg
 ---
 
 {% import "macros/photos.njk" as macros with context %}
-{{ macros.three_columns(images, width) }}
+
+{{ macros.three_columns([
+    'paris_2019_11.jpg',
+    'edinburgh_01.jpg',
+    'amsterdam_01.jpg',
+    'edinburgh_08.jpg',
+    'edinburgh_03.jpg',
+    'amsterdam_02.jpg',
+    'subjects/20180817.jpg',
+    'paris_2019_03.jpg',
+    'amsterdam_07.jpg',
+    'den_haag_06.jpg',
+    'subjects/20181006-2.jpg',
+    'stuff_from_london_01.jpg',
+    'subjects/20171217.jpg',
+    'edinburgh_15.jpg',
+    'subjects/20181006-3.jpg',
+    'rheinkomet_07.jpg',
+    'subjects/20181010.jpg',
+    'subjects/20190816.jpg',
+    'stuff_from_london_06.jpg',
+    'impressions_of_basel_04.jpg',
+    'amsterdam_03.jpg',
+    'in_bruges_18.jpg',
+    'paris_2019_01.jpg',
+    'in_bruges_08.jpg',
+    'in_bruges_09.jpg',
+    'subjects/20160529.jpg',
+    'subjects/20160529-2.jpg',
+    'subjects/20160502.jpg',
+    'stairway_to_heaven_04.jpg',
+    'architecture_study_06.jpg',
+    'architecture_study_04.jpg'
+], width) }}
