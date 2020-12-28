@@ -1,8 +1,7 @@
 {% macro image(image, classes = [], lazy = false, sizes = ['100vw'], srcset = [], lightbox = false) %}
 {% set src = image if (image | is_string) else image.name %}
 {% set srcPath = '/photos/' + src %}
-{% set imageDimensionsKey = 'photos/' + src %}
-{% set dimensions = image_sizes[imageDimensionsKey] if imageDimensionsKey in image_sizes else null %}
+{% set dimensions = image_sizes[src] if src in image_sizes else null %}
 {%- if lightbox -%}
     <a href="{{ srcPath | imageWidth(config.lightbox.imageWidth) }}" class="lightbox">
 {%- endif -%}
