@@ -33,6 +33,9 @@
 
     &__section {
         margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
         @include stack(.75rem);
     }
     &__headline {

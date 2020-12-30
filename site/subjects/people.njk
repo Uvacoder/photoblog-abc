@@ -5,3 +5,47 @@ tags: subject
 sort: 1
 image: loxy_scarf_05.jpg
 ---
+
+{% import "macros/photos.njk" as macros with context %}
+
+{{ macros.three_columns([
+    'loxy_scarf_01.jpg',
+    'loxy_scarf_05.jpg',
+    'loxy_scarf_03.jpg',
+    'yulia_rheinpark_09.jpg',
+    'christina_deutzer_rheinterrasse_08.jpg',
+    'christina_deutzer_rheinterrasse_07.jpg',
+    'winter_portraits_02.jpg',
+    'winter_portraits_03.jpg',
+    'winter_portraits_11.jpg',
+    'winter_portraits_10.jpg',
+    'blog/20200915-2.jpg',
+    'loxy_scarf_04.jpg',
+    'loxy_scarf_07.jpg',
+    'maya_herrmann_gruenguertel_01.jpg',
+    'maya_herrmann_gruenguertel_03.jpg',
+    'maya_herrmann_gruenguertel_17.jpg',
+    'maya_herrmann_gruenguertel_19.jpg',
+    'loxy_tillmann_2_experiments_02.jpg',
+    'loxy_tillmann_2_experiments_11.jpg',
+    'loxy_tillmann_1_harmony_06.jpg',
+    'loxy_tillmann_2_experiments_08.jpg',
+    'loxy_tillmann_1_harmony_01.jpg',
+    'tim_04.jpg',
+    'tim_05.jpg',
+    'tim_06.jpg',
+    'tim_08.jpg',
+    'tim_10.jpg',
+    'yulia_rheinpark_01.jpg',
+    'loxy_tillmann_1_harmony_11.jpg',
+    'loxy_tillmann_2_experiments_09.jpg',
+    'christina_deutzer_rheinterrasse_06.jpg',
+    'christina_deutzer_rheinterrasse_01.jpg',
+    'subjects/20170609.jpg',
+    'subjects/20170609-2.jpg',
+    'winter_portraits_08.jpg',
+    'candlelight_portraits_03.jpg',
+    'candlelight_portraits_01.jpg',
+    'subjects/20200423.jpg',
+    'subjects/20181005.jpg'
+], width) }}

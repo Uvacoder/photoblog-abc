@@ -27,9 +27,10 @@
         "watch:eleventy": "eleventy --serve",
         "watch:sass": "node-sass --watch --output-style=expanded --source-maps=true src/sass --output=dist/css",
         "watch:parcel": "parcel watch --out-dir dist/js/ --public-url /js/ src/js/main.js",
-        "get_image_sizes": "node ./scripts/get_image_sizes --throw-on-diff"
+        "get_image_sizes": "node ./scripts/get_image_sizes",
+        "get_image_sizes_precommit": "node ./scripts/get_image_sizes --throw-on-diff"
     },
-    "precommit": "get_image_sizes",
+    "precommit": "get_image_sizes_precommit",
     "dependencies": {
         "@11ty/eleventy": "^0.11.1",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
