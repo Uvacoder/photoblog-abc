@@ -29,6 +29,7 @@
         "watch:parcel": "parcel watch --out-dir dist/js/ --public-url /js/ src/js/main.js",
         "get_image_sizes": "node ./scripts/get_image_sizes > site/_data/image_sizes.json"
     },
+    "precommit": "get_image_sizes",
     "dependencies": {
         "@11ty/eleventy": "^0.11.1",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
@@ -45,6 +46,7 @@
     },
     "devDependencies": {
         "image-size": "^0.9.3",
-        "npm-run-all": "^4.1.5"
+        "npm-run-all": "^4.1.5",
+        "pre-commit": "^1.2.2"
     }
 }
