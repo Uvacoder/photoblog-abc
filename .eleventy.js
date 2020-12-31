@@ -61,6 +61,8 @@ module.exports = eleventyConfig => {
         return b.date - a.date
     });
 
+    eleventyConfig.addWatchTarget('src/');
+
     eleventyConfig.addCollection('subjects', c => photosBySubject(c));
     eleventyConfig.addCollection('subjects_favourites', c => photosBySubjectWithFavourites(c));
     eleventyConfig.addCollection('projects', c => photosByProject(c));
