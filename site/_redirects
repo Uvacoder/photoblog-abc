@@ -1,0 +1,23 @@
+# for americans
+/favorites                          /favourites/
+
+# redirect old project URLs
+/in-bruges                          /bruges/
+/loxy-scarves                       /loxy/
+/christina-lights                   /christina/
+/loxy-tillmann-part-1               /loxy-tillmann/
+/loxy-tillmann-part-2               /loxy-tillmann/
+/stuff-from-portraits               /paris/
+
+# redirect some old projects to appropriate subject page
+/winter-portraits                   /people/
+/yulia                              /people/
+/tharatipte                         /people/
+/candlelight-portraits              /people/
+/at-sunset                          /people/
+/architecture-study-rheinauhafen    /architecture/
+/stairway-to-heaven                 /architecture/
+/stuff-from-londong                 /architecture/
+/impressions-of-zurich              /architecture/
+/impressions-of-basel               /architecture/
+/color-study-flowers                /nature/

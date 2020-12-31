@@ -1,4 +1,3 @@
-const edinburgh = require('./photos/edinburgh.json');
 const red_butterfly = require('./photos/red_butterfly.json');
 
 module.exports = [
@@ -43,8 +42,8 @@ module.exports = [
         },
         caption: 'Young sheep don\'t want to stand still for you to take their picture!',
         link: {
-            text: 'See more sheep photos from this day',
-            url: '/sheep-2020',
+            text: 'View more sheep',
+            url: '/sheep-2020/',
             icon: 'solid/arrow-right',
         }
     },
@@ -63,6 +62,10 @@ module.exports = [
             alt: 'A duck swimming across a pond, cleanly reflected on the water\s surface',
         },
         caption: 'During lockdown you learn to appreciate your immediate environment again. This duck lives in the small park next door.',
+        link: {
+            text: 'View more ducks',
+            url: '/ducks-park/',
+        }
     },
     {
         date: '2019-10-09Z',
@@ -72,8 +75,8 @@ module.exports = [
         },
         caption: 'I took this from inside the Louvre, looking over the pyramid entrance on a rainy day. The smugdes in the lower left are rain drops on the window.',
         link: {
-            text: 'See some of my favourite photos',
-            url: '/favourites',
+            text: 'View some of my favourite photos',
+            url: '/favourites/',
             icon: 'solid/arrow-right',
         }
     },
@@ -85,8 +88,8 @@ module.exports = [
         },
         caption: 'A statue in a little alcove in the Louvre.',
         link: {
-            text: 'See all photos from Paris',
-            url: '/paris',
+            text: 'View all photos from Paris',
+            url: '/paris/',
             icon: 'solid/arrow-right',
         }
     },
@@ -106,8 +109,8 @@ module.exports = [
         },
         caption: 'I went to visit the sheep again!',
         link: {
-            text: 'See more black-and-white sheep pictures',
-            url: '/black-and-white-sheep',
+            text: 'View more black-and-white sheep pictures',
+            url: '/black-and-white-sheep/',
             icon: 'solid/arrow-right',
         }
     },
@@ -119,10 +122,10 @@ module.exports = [
         },
         caption: 'We spotted a family of nutria (coypu) by a forest pond.',
         link: {
-            text: 'See the entire nutria family',
-            url: '/nutria',
+            text: 'View the entire nutria family',
+            url: '/nutria/',
             icon: 'solid/arrow-right',
-        }
+        },
     },
     {
         date: '2019-03-08',
@@ -130,11 +133,6 @@ module.exports = [
             name: 'den_haag_07.jpg',
             alt: 'A black-and-white photo of frothy waves approaching the shore, with a lighthouse shining in the background.',
         },
-        link: {
-            text: 'See more photos from Den Haag',
-            url: '/den-haag',
-            icon: 'solid/arrow-right',
-        }
     },
     {
         date: '2018-12-26Z',
@@ -152,8 +150,8 @@ module.exports = [
         },
         caption: 'Somewhere in Edinburgh …',
         link: {
-            text: 'See all photos I took in Edinburgh',
-            url: '/edinburgh',
+            text: 'View all photos I took in Edinburgh',
+            url: '/edinburgh/',
             icon: 'solid/arrow-right',
         }
     },
@@ -173,8 +171,8 @@ module.exports = [
         },
         caption: 'We spotted this raven in Edinburgh, and it waited patiently for me to get the best shot I could.',
         link: {
-            text: 'See more of my animal photography',
-            url: '/animals-nature',
+            text: 'View more of my animal photography',
+            url: '/nature/',
             icon: 'solid/arrow-right',
         }
     },
@@ -186,8 +184,8 @@ module.exports = [
         },
         caption: 'This deer really enjoyed the apple we gave it!',
         link: {
-            text: 'See all photos from the wildlife park',
-            url: '/wildlife-park',
+            text: 'View all photos from the wildlife park',
+            url: '/wildlife-park/',
             icon: 'solid/arrow-right',
         }
     },
@@ -199,8 +197,8 @@ module.exports = [
         },
         caption: 'The sheep down by the river Rhine are always happy to pose for you!',
         link: {
-            text: 'See all sheep pictures I took that day',
-            url: '/happy-sheep',
+            text: 'View all sheep pictures I took that day',
+            url: '/sheep-2018/',
         }
     },
     {
@@ -224,8 +222,8 @@ module.exports = [
         },
         caption: 'A canal in Amsterdam',
         link: {
-            text: 'See all photos from Amsterdam',
-            url: '/amsterdam',
+            text: 'View all photos from Amsterdam',
+            url: '/amsterdam/',
         }
     },
     {

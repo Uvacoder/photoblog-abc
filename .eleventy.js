@@ -46,6 +46,7 @@ module.exports = eleventyConfig => {
     // });
 
     eleventyConfig.addPassthroughCopy({
+        'site/_redirects': '_redirects',
         'site/_headers': '_headers',
         'site/photos': 'photos',
     });
