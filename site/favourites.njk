@@ -1,15 +1,39 @@
----js
-{
-    title: "My favourite photos",
-    layout: "html",
-    tags: "favourites",
-    menu_title: "My favourites",
-    width: "full",
-    image: "rainy_day_cologne_01.jpg",
-    images: ["den_haag_07.jpg"],
-}
+---
+title: My favourite photos
+layout: html
+tags: favourites
+menu_title: My favourites
+width: wide
+image: rainy_day_cologne_01.jpg
 ---
 
 {% import "macros/photos.njk" as macros with context %}
+{% import "macros/blocks.njk" as blocks with context %}
 
-{{ macros.three_columns(images, width) }}
+{{ blocks.page_header(
+    headline|default(title)
+) }}
+
+{{ macros.one_column([
+    'edinburgh_06.jpg',
+    'edinburgh_09.jpg',
+    'paris_2019_11.jpg',
+    'rainy_day_cologne_01.jpg',
+    'den_haag_07.jpg',
+    'edinburgh_10.jpg',
+    'amsterdam_02.jpg',
+    'subjects/20170510.jpg',
+    'nutria_07.jpg',
+    'nutria_03.jpg',
+    'impressions_of_zurich_04.jpg',
+    'weddings/20170807.jpg',
+    'edinburgh_14.jpg',
+    'edinburgh_12.jpg',
+    'edinburgh_11.jpg',
+    'loxy_scarf_05.jpg',
+    'ducks_park_05.jpg',
+    'ducks_park_03.jpg',
+    photos.red_butterfly[0],
+    'amsterdam_01.jpg',
+    'subjects/20171217.jpg'
+], width) }}

@@ -1,0 +1,10 @@
+{% macro page_header(headline, date = false) %}
+<header class="project-header">
+    <h1 class="project-header__headline">{{ headline }}</h1>
+    {% if date %}
+        <time class="project-header__time" datetime="{{ date | date_iso }}">
+            {{ date | date }}
+        </time>
+    {% endif %}
+</header>
+{% endmacro %}

@@ -4,13 +4,11 @@ width: wide
 permalink: "{{ page.fileSlug | stripDate }}/index.html"
 ---
 
-<header class="project-header">
-    <h1 class="project-header__headline">{{ headline|default(title) }}</h1>
-    {% if page.date %}
-        <time class="project-header__time" datetime="{{ page.date| date_iso }}">
-            {{ page.date | date }}
-        </time>
-    {% endif %}
-</header>
+{% import "macros/blocks.njk" as blocks with context %}
+
+{{ blocks.page_header(
+    headline|default(title),
+    page.date|default(false)
+) }}
 
 {{ content | safe }}

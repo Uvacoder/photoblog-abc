@@ -6,6 +6,11 @@ tags: blog
 ---
 
 {% import "macros/photos.njk" as macros with context %}
+{% import "macros/blocks.njk" as blocks with context %}
+
+{{ blocks.page_header(
+    headline|default(title)
+) }}
 
 <div class="blog">
     {% for entry in blog %}
