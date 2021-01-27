@@ -1,3 +1,5 @@
+{% import "macros/photos.njk" as photos with context %}
+
 <link rel="canonical" href="{{ site.url + page.url }}">
 <meta property="og:url" content="{{ site.url + page.url }}">
 
@@ -6,9 +8,24 @@
 <meta property="og:locale" content="{{ site.lang }}">
 <meta property="og:site_name" content="{{ site.name }}">
 
+{% set preview_image = seo_image|default(image) %}
+{% if preview_image %}
+    {%- set src = preview_image if (preview_image | is_string) else preview_image.name -%}
+    <meta property="og:image" content="{{ photos.image_path(src) | imageWidth(1200) }}">
+    <meta property="og:image:alt" content="{{ (title + " | " + description) if description else title }}">
+{% endif %}
+
 {% if description %}
     <meta name="description" content="{{ description }}">
     <meta property="og:description" content="{{ description }}">
 {% endif %}
 
 <meta name="generator" content="Eleventy (11ty.dev)">
+
+{%- if seo.twitter -%}
+    {%- for name, value in seo.twitter -%}
+        {% if value %}
+            <meta name="twitter:{{ name }}" content="{{ value }}">
+        {% endif %}
+    {%- endfor -%}
+{%- endif -%}

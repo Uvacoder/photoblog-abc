@@ -33,6 +33,9 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter('findSections', utils.findSections);
     eleventyConfig.addShortcode('fontawesome', utils.fontawesome);
 
+    eleventyConfig.addFilter('md', text => markdownLib.render(text));
+    eleventyConfig.addFilter('md_inline', text => markdownLib.renderInline(text));
+
     eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
     eleventyConfig.addFilter('date_iso', date => (new Date(date).toISOString().split('T')[0]));
 

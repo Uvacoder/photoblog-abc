@@ -95,7 +95,7 @@ $stack-default-margin: 1rem;
 
 // main sections
 
-$body-bg: linear-gradient(to bottom, $primary 16rem, $gray-200 16rem);
+$body-bg: linear-gradient(to bottom, var(--theme-color, #{$primary}) 16rem, $gray-200 16rem);
 // $body-bg: linear-gradient(to bottom, $primary 16rem, lighten($primary, 55%) 16rem);
 $body-color: $black;
 

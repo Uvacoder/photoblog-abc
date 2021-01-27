@@ -63,11 +63,14 @@
             color: inherit;
             text-decoration: underline;
         }
-        // &[aria-current] {
-        //     &::before {
-        //         content: "→"" ";
-        //     }
-        // }
+        &[aria-current] {
+            &::after {
+                content: " " " " "\1F441";
+            }
+            // &::before {
+            //     content: "→"" ";
+            // }
+        }
     }
     &__subnav {
         // background: $gray-700;

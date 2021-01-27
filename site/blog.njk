@@ -3,6 +3,7 @@ title: Photo blog
 layout: html
 width: base
 tags: blog
+image: blog/20200918.jpg
 ---
 
 {% import "macros/photos.njk" as macros with context %}
@@ -36,3 +37,5 @@ tags: blog
         </section>
     {% endfor %}
 </div>
+
+{{ blocks.page_footer() }}

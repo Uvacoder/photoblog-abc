@@ -1,4 +1,4 @@
-{% macro page_header(headline, date = false) %}
+{% macro page_header(headline, date = false, date_string = false) %}
 <header class="project-header">
     <h1 class="project-header__headline">{{ headline }}</h1>
     {% if date %}
@@ -7,4 +7,14 @@
         </time>
     {% endif %}
 </header>
+{% endmacro %}
+
+{% macro page_footer() %}
+<aside class="page-footer">
+    <p class="back-to-top">
+        <a href="#content" class="back-to-top__link" title="{{ translations.back_to_top }}" aria-label="{{ translations.back_to_top }}">
+            {% fontawesome "solid/chevron-circle-up", ['back-to-top__icon'], translations.back_to_top %}
+        </a>
+    </p>
+</aside>
 {% endmacro %}

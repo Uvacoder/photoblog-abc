@@ -24,3 +24,30 @@
     column-gap: 2rem;
     @include stack(3rem);
 }
+
+
+.intro-box {
+    @include stack (1rem);
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: 1fr;
+    @include breakpoint-up (lg) {
+        grid-template-columns: auto 1fr;
+    }
+    &__figure {
+        width: 20rem;
+        max-width: 100%;
+        height: auto;
+    }
+    &__content {
+        @include stack (1rem);
+    }
+    &__link {
+        font-size: 1em;
+        font-weight: $font-weight-normal;
+        text-decoration: none;
+        .icon-link__icon {
+            margin-right: 0;
+        }
+    }
+}

@@ -4,6 +4,7 @@ layout: project
 tags: project
 width: base
 image: ducks_park_02.jpg
+themeColor: "#007653"
 ---
 
 {% import "macros/photos.njk" as macros with context %}

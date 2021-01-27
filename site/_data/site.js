@@ -1,9 +1,9 @@
 const package = require('../../package.json');
 
 module.exports = {
-    title: "Mehr Licht Photographie",
+    name: "mehrlicht.photos",
     url: "https://mehrlicht.photos",
     version: package.version,
-    lang: "de",
+    lang: "en",
     dir: "ltr",
 }

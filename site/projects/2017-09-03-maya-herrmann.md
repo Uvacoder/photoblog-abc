@@ -4,6 +4,7 @@ layout: project
 tags: project
 width: full
 image: maya_herrmann_gruenguertel_07.jpg
+themeColor: "#cc9b44"
 ---
 
 {% import "macros/photos.njk" as macros with context %}

@@ -10,12 +10,14 @@ content_class: default
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
 
+    {# stylesheets and js #}
     <link rel="stylesheet" href="/css/main.css?v={{ site.version }}">
     <script src="/js/main.js?v={{ site.version }}" defer></script>
 
     {% include "components/seo.njk" %}
 </head>
-<body>
+<body
+    {% if themeColor %} style="--theme-color: {{ themeColor | safe }}"{% endif %}>
     <main class="main main--{{ width }}">
         <aside class="main__nav">
             {% include "components/navigation.njk" %}

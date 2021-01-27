@@ -1,14 +1,17 @@
 ---
-title: Homepage
+title: Moritz L'Hoest – mehrlicht.photos
+menu_title: Home
 layout: html
 width: full
 content_class: homepage-content
 permalink: /
 tags: homepage
+image: home/portraits_2020_09_026.jpg
 ---
 
 {% import "macros/photos.njk" as macros with context %}
 {% import "macros/utils.njk" as utils with context %}
+{% import "macros/blocks.njk" as blocks with context %}
 
 <h1>Photography by Moritz L'Hoest</h1>
 
@@ -29,6 +32,36 @@ tags: homepage
         {% endfor %}
     </div>
     {{ utils.link('/blog/', 'View older photos in the photo blog', 'solid/arrow-right', ['teaser-grid__link']) }}
+</section>
+
+<section class="homepage-content__section">
+    <div class="intro-box">
+        {{ macros.figure(
+            { name: 'home/2020_moritz_lost_compressed.jpg', alt: "A portrait of me, Moritz L'Hoest, wearing my glasses and smiling slightly." },
+            '15 September 2020',
+            'intro-box',
+            false,
+            ['min(20rem, 100vw - 2rem)'],
+            [120, 160, 240, 320, 480, 620, 960],
+            true
+        ) }}
+        <div class="intro-box__content">
+            <p>
+                {{ "Hi there! I'm Moritz L'Hoest, web developer by trade and amateur photographer since 2015. I live in Cologne, Germany and shoot a variety of subjects. I'm mainly interested in [people](/people/) as well as [wildlife & nature photography](/nature/). I also take a lot of [travel and city photography](/travel/). Finally, there's also some [weddings](/weddings/) in there." | md_inline | safe }}
+            </p>
+            <p>
+                {{ "You can browse my photos by subject or by project. The subject pages include what I consider my best photos in the respective categories. The project pages are based on specific occasions, places or shoots and are presented in chronological order, starting with the most recent." | md_inline | safe }}
+            </p>
+            <p>
+                {{ "Also, check out my [photo blog](/blog/) or go straight to [my favourite photos](/favourites/)!" | md_inline | safe }}
+            </p>
+            <p>
+                {{ "Get in touch:  " | md_inline | safe }}
+                {{ utils.link('mailto:m@mehrlicht.photos', 'm@mehrlicht.photos', 'solid/envelope', ['intro-box__link']) }}
+                {{ utils.link('https://www.instagram.com/moritzlost/', 'MoritzLost', 'brands/instagram', ['intro-box__link']) }}
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="homepage-content__section">
@@ -64,3 +97,5 @@ tags: homepage
         {% endfor %}
     </div>
 </section>
+
+{{ blocks.page_footer() }}

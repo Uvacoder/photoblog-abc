@@ -1,7 +1,7 @@
 {% macro image(image, classes = [], lazy = false, sizes = ['100vw'], srcset = [], lightbox = false) %}
-{% set src = image if (image | is_string) else image.name %}
-{% set srcPath = '/photos/' + src %}
-{% set dimensions = image_sizes[src] if src in image_sizes else null %}
+{%- set src = image if (image | is_string) else image.name -%}
+{%- set srcPath = '/photos/' + src -%}
+{%- set dimensions = image_sizes[src] if src in image_sizes else null -%}
 {%- if lightbox -%}
     <a href="{{ srcPath | imageWidth(config.lightbox.imageWidth) }}" class="lightbox">
 {%- endif -%}
@@ -18,7 +18,11 @@
 {%- endif -%}
 {% endmacro %}
 
-{% macro figure(base_image, caption = null, base_class = 'figure', lazy = false, sizes = ['100vw'], srcset = [], lightbox = false)%}
+{%- macro image_path(image) -%}
+/photos/{{- image if (image | is_string) else image.name -}}
+{%- endmacro -%}
+
+{% macro figure(base_image, caption = null, base_class = 'figure', lazy = false, sizes = ['100vw'], srcset = [], lightbox = false) %}
 {% set caption = caption if caption else base_image.caption %}
 <figure class="{{ base_class }}__figure">
     {{- image(
