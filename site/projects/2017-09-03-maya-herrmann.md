@@ -9,4 +9,6 @@ themeColor: "#cc9b44"
 
 {% import "macros/photos.njk" as macros with context %}
 
+Models: [@maike.maya](https://www.instagram.com/maike.maya/) & Herrmann S.
+
 {{ macros.three_columns(photos.maya_herrmann_gruenguertel, width) }}
