@@ -1,14 +1,15 @@
 {
     "name": "moritzlost",
-    "version": "0.1.0",
-    "description": "",
+    "version": "1.0.0",
+    "description": "Source code for the personal photography website of Moritz L'Hoest.",
     "keywords": [
         "eleventy"
     ],
-    "bugs": "",
+    "homepage": "https://mehrlicht.photos",
+    "bugs": "https://github.com/MoritzLost/MehrLicht/issues",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/MoritzLost/MehrLicht.git"
     },
     "license": "UNLICENSED",
     "author": "MoritzLost <info@herebedragons.world>",
