@@ -20,7 +20,7 @@ module.exports = [
             name: 'blog/20201114.jpg',
             alt: 'Multiple layers of fungi growing on a log.',
         },
-        caption: 'Some interesting mushrooms growing on a log.',
+        caption: 'Some interesting fungi growing on a log.',
     },
     {
         date: '2020-09-18Z',

@@ -1,8 +1,9 @@
-{% macro link(url, text, icon = false, classes = []) %}
+{%- macro link(url, text, icon = false, classes = []) -%}
 <a class="icon-link {{ classes|join(' ') }}" href="{{ url }}">
-    {% if icon %}
-        {% fontawesome icon, ['icon-link__icon'], '' %}
-    {% endif %}
-    {{ text }}
+    {%- if icon -%}
+        {%- fontawesome icon, ['icon-link__icon'], '' -%}
+        {{- ' ' -}}
+    {%- endif -%}
+    {{- text -}}
 </a>
-{% endmacro %}
+{%- endmacro -%}

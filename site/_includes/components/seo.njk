@@ -11,7 +11,7 @@
 {% set preview_image = seo_image|default(image) %}
 {% if preview_image %}
     {%- set src = preview_image if (preview_image | is_string) else preview_image.name -%}
-    <meta property="og:image" content="{{ photos.image_path(src) | imageWidth(1200) }}">
+    <meta property="og:image" content="{{ site.url }}{{ photos.image_path(src) | imageWidth(1200) }}">
     <meta property="og:image:alt" content="{{ (title + " | " + description) if description else title }}">
 {% endif %}
 

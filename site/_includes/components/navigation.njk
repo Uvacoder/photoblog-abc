@@ -1,5 +1,5 @@
 <div class="header">
-    <button class="header__burger hamburger hamburger--arrow" type="button" id="navigation-button"
+    <button class="header__burger hamburger hamburger--squeeze" type="button" id="navigation-button"
         aria-controls="navigation-menu" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only" id="navigation-label">{{ translations.nav_button_label }}</span>
         <span class="hamburger-box" aria-hidden="true">
@@ -9,6 +9,7 @@
 </div>
 
 <nav class="navigation" id="navigation-menu" tabindex="-1" aria-label="{{ translations.nav_menu_label }}">
+    <img class="navigation__logo" alt="mehrlicht.photos" src="/assets/mehrlicht-photos-white.svg" width="610" height="287">
     <a href="#content" class="skip-to-content sr-only-focusable">{{ translations.main_content_link }}</a>
     {% for section in collections.postTree %}
         <section class="navigation__section">
