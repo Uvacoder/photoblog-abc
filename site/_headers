@@ -5,3 +5,19 @@
 /*.css
     Cache-Control: max-age=31536000
     Cache-Control: public
+
+/*.jpg
+    Cache-Control: max-age=31536000
+    Cache-Control: public
+
+/*.png
+    Cache-Control: max-age=31536000
+    Cache-Control: public
+
+/*.svg
+    Cache-Control: max-age=31536000
+    Cache-Control: public
+
+/*.webp
+    Cache-Control: max-age=31536000
+    Cache-Control: public
