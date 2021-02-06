@@ -83,6 +83,7 @@ module.exports = eleventyConfig => {
     // configure eleventy file copy
     eleventyConfig.addPassthroughCopy({
         'site/assets': 'assets',
+        'site/root-assets/*': '.',
         'site/_redirects': '_redirects',
         'site/_headers': '_headers',
         'site/photos': 'photos',

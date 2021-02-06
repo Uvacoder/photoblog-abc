@@ -1,0 +1,38 @@
+{
+    "name": "Mehr Licht Photos",
+    "short_name": "Mehr Licht",
+    "description": "Personal photography website of Moritz L'Hoest. Inculding people, wildlife and travel photography.",
+    "lang": "en-GB",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#33607C",
+    "icons": [
+      {
+        "src": "mehrlicht-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "mehrlicht-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "apple-touch-icon.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      },
+      {
+        "src": "mehrlicht-maskable-1024x1024.png",
+        "sizes": "1024x1024",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "mehrlicht-maskable-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  }
