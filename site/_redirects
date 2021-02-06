@@ -5,6 +5,8 @@ http://herebedragons.world/*        https://mehrlicht.photos/:splat 301!
 https://herebedragons.world/*       https://mehrlicht.photos/:splat 301!
 http://www.herebedragons.world/*    https://mehrlicht.photos/:splat 301!
 https://www.herebedragons.world/*   https://mehrlicht.photos/:splat 301!
+http://mehrlicht.netlify.app/*      https://mehrlicht.photos/:splat 301!
+https://mehrlicht.netlify.app/*     https://mehrlicht.photos/:splat 301!
 
 # for americans
 /favorites                          /favourites/
