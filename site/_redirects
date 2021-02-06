@@ -1,3 +1,9 @@
+# domain redirects
+http://blog.herebedragons.world/*   https://moritzlost.de/:splat    301!
+https://blog.herebedragons.world/*  https://moritzlost.de/:splat    301!
+http://herebedragons.world/*        https://mehrlicht.photos/:splat 301!
+https://herebedragons.world/*       https://mehrlicht.photos/:splat 301!
+
 # for americans
 /favorites                          /favourites/
 
