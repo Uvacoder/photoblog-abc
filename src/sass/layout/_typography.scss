@@ -19,7 +19,15 @@ h1, h2, h3, h4, h5, h6 {
     line-height: $line-height-headlines;
     font-weight: $font-weight-bold;
 }
-h1 { @include font-size(2.5rem); }
+h1 {
+    border-bottom: 8px solid var(--theme-color, #{$primary});
+    padding-bottom: 4px;
+    padding-right: 2rem;
+
+    width: max-content;
+    max-width: 100%;
+    @include font-size(2.5rem);
+}
 h2 { @include font-size(1.5rem); }
 h3 { @include font-size(1.25rem); }
 h4 { @include font-size(1.125rem); }
