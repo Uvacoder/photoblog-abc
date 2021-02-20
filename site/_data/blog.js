@@ -15,6 +15,25 @@ module.exports = [
     //     }
     // },
     {
+        date: '2021-02-20Z',
+        image: {
+            name: 'blog/20200126.jpg',
+            alt: 'A shopping cart half submerged in a pond.',
+        },
+    },
+    {
+        date: '2021-01-16Z',
+        image: {
+            name: 'snowy-night-pixel-5/snow_night_pixel_5_04.jpg',
+            alt: 'A black-and-white photo of a cut-down christmas tree laying on the ground covered in snow.',
+        },
+        link: {
+            text: 'View more photos from this snowy night',
+            url: '/snowy-night-pixel-5/',
+            icon: 'solid/snowflake',
+        }
+    },
+    {
         date: '2020-11-14Z',
         image: {
             name: 'blog/20201114.jpg',
