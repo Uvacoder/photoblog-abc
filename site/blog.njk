@@ -19,7 +19,9 @@ changefreq: weekly
     {% for entry in blog %}
         <section class="blog-entry">
             {% if entry.date %}
-                <time class="blog-entry__date">{{ entry.date | date }}</time>
+                <time class="blog-entry__date" id="{{ entry.date | date_id }}">
+                    {{- entry.date | date -}}
+                </time>
             {% endif %}
             {{ macros.figure(
                 entry.image,

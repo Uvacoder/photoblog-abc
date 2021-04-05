@@ -33,6 +33,7 @@ module.exports = eleventyConfig => {
     // date functions
     eleventyConfig.addFilter('date', date => (new Date(date)).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }));
     eleventyConfig.addFilter('date_iso', date => (new Date(date).toISOString().split('T')[0]));
+    eleventyConfig.addFilter('date_id', (date, prefix = 'd') => `${prefix}${(new Date(date).toISOString().split('T')[0])}`);
     // debug utility
     eleventyConfig.addFilter('log', v => console.log(v));
 
