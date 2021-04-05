@@ -33,21 +33,21 @@
     },
     "precommit": "get_image_sizes_precommit",
     "dependencies": {
-        "@11ty/eleventy": "^0.11.1",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
-        "@fortawesome/fontawesome-free": "^5.15.2",
+        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "hamburgers": "^1.1.3",
-        "jsdom": "^16.4.0",
+        "jsdom": "^16.5.2",
         "markdown-it": "^12.0.4",
-        "markdown-it-anchor": "^7.0.2",
+        "markdown-it-anchor": "^7.1.0",
         "node-sass": "^5.0.0",
         "parcel-bundler": "^1.12.4",
-        "prism-themes": "^1.5.0",
+        "prism-themes": "^1.6.0",
         "rfs": "^9.0.3",
         "tobii": "^2.0.0-alpha"
     },
     "devDependencies": {
-        "image-size": "^0.9.3",
+        "image-size": "^0.9.7",
         "npm-run-all": "^4.1.5",
         "pre-commit": "^1.2.2"
     }
