@@ -20,13 +20,18 @@ description: Photography by Moritz L'Hoest. Hobby photographer from Cologne, Ger
 
 <section class="homepage-content__section">
     <h2 id="latest-photos">Latest photos</h2>
-    <div class="teaser-grid">
-        {% for entry in blog | firstNItems(6) %}
+    <div class="three-columns">
+        {% for entry in blog | firstNItems(8) %}
+            {% set link = {
+                url: entry.link.url,
+                text: entry.link.text,
+                icon: entry.link.icon if (entry.link.icon) else 'solid/arrow-right'
+            } if entry.link else false %}
             {{ macros.teaser(
                 entry.image,
                 false,
                 entry.date,
-                false,
+                link,
                 responsive_images.threeColumns[width].sizes,
                 responsive_images.threeColumns[width].srcset,
                 not loop.first,
@@ -34,7 +39,7 @@ description: Photography by Moritz L'Hoest. Hobby photographer from Cologne, Ger
             ) }}
         {% endfor %}
     </div>
-    {{ utils.link('/blog/', 'View older photos in the photo blog', 'solid/arrow-right', ['teaser-grid__link']) }}
+    {{ utils.link('/blog/', 'View older photos in the photo blog', 'solid/arrow-right') }}
 </section>
 
 <section class="homepage-content__section">
