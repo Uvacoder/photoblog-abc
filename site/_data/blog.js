@@ -15,6 +15,34 @@ module.exports = [
     //     }
     // },
     {
+        date: '2021-05-30Z',
+        image: {
+            name: 'sheep-2021/sheep_2021_01.jpg',
+            alt: 'A young sheep standing in tall grass, looking attentively at the camera.',
+        },
+        caption: 'Sheep again this year!',
+        link: {
+            text: 'View more sheep from this shoot',
+            url: '/sheep-2021/',
+        }
+    },
+    {
+        date: '2021-05-14Z',
+        image: {
+            name: 'blog/20210514.jpg',
+            alt: 'A macro shot of a wasp clinging vertically to a board.',
+        },
+        caption: 'It took me a while to get close enough to a wasp without it flying away.'
+    },
+    {
+        date: '2021-04-21Z',
+        image: {
+            name: 'blog/20210421.jpg',
+            alt: 'A macro shot of a bee.',
+        },
+        caption: 'With macro photography, subjects may just come flying in through your kitchen window.'
+    },
+    {
         date: '2021-04-02Z',
         image: {
             name: 'blog/20210402.jpg',
