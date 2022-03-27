@@ -1,6 +1,6 @@
 import "./navigation";
 
-import Tobii from "tobii";
+import Tobii from "@midzer/tobii";
 
 const tobii = new Tobii({
     selector: '.lightbox',

@@ -1,6 +1,8 @@
-$base-font-size: 16;
+.tobii {
+    --base-font-size: 16px;
 
-$slide-max-height: 90vh !default;
-$slide-max-width: 90vw !default;
+    --slide-max-height: calc(90vh - 2.77778em);
+    --slide-max-width: 90vw;
+}
 
-@import "../../../node_modules/tobii/src/scss/tobii.scss";
+@import "../../../node_modules/@midzer/tobii/dist/tobii.min";

@@ -8,12 +8,6 @@ module.exports = eleventyConfig => {
     const markdownLib = markdownIt({
         html: true,
         typographer: true,
-    }).use(require('markdown-it-anchor'), {
-        level: [2],
-        slugify: utils.readableSlug,
-        permalink: true,
-        permalinkClass: 'section-anchor',
-        permalinkSymbol: '#',
     });
     eleventyConfig.setLibrary('md', markdownLib);
 
