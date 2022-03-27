@@ -15,6 +15,18 @@ module.exports = [
     //     }
     // },
     {
+        date: '2022-03-27Z',
+        image: {
+            name: 'meanders/meanders_01.jpg',
+            alt: 'A close-up picture of a some froth on a tiny wave in black-and-white.',
+        },
+        link: {
+            text: 'View more meanders',
+            url: '/meanders/',
+            icon: 'solid/arrow-right',
+        }
+    },
+    {
         date: '2021-05-30Z',
         image: {
             name: 'sheep-2021/sheep_2021_01.jpg',
