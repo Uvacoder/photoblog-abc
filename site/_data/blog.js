@@ -27,6 +27,34 @@ module.exports = [
         }
     },
     {
+        date: '2022-03-27Z',
+        image: {
+            name: 'subjects/20220321.jpg',
+            alt: 'A frog sitting in mud looking directly at the camera.',
+        },
+    },
+    {
+        date: '2022-03-27Z',
+        image: {
+            name: 'subjects/20220321-2.jpg',
+            alt: 'A red spotted butterfly sitting on a rock.',
+        },
+    },
+    {
+        date: '2022-03-27Z',
+        image: {
+            name: 'subjects/20200521.jpg',
+            alt: 'Branch of a gingko tree with green leaves set against a blue sky.',
+        },
+    },
+    {
+        date: '2022-03-27Z',
+        image: {
+            name: 'subjects/20171227.jpg',
+            alt: 'A tree standing in a field with radial motion blur around it.',
+        },
+    },
+    {
         date: '2021-05-30Z',
         image: {
             name: 'sheep-2021/sheep_2021_01.jpg',
