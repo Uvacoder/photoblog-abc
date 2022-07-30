@@ -26,20 +26,20 @@
         "get_image_sizes_precommit": "node ./scripts/get_image_sizes --throw-on-diff"
     },
     "dependencies": {
-        "@11ty/eleventy": "^1.0.0",
-        "@fortawesome/fontawesome-free": "^6.1.1",
-        "@midzer/tobii": "^2.3.3",
+        "@11ty/eleventy": "^1.0.1",
+        "@fortawesome/fontawesome-free": "^6.1.2",
+        "@midzer/tobii": "^2.4.0",
         "hamburgers": "^1.2.1",
-        "jsdom": "^19.0.0",
-        "markdown-it": "^12.3.2",
+        "jsdom": "^20.0.0",
+        "markdown-it": "^13.0.1",
         "parcel-bundler": "^1.12.4",
         "prism-themes": "^1.9.0",
         "rfs": "^9.0.6",
-        "sass": "^1.49.9",
+        "sass": "^1.54.0",
         "tobii": "^2.0.0-alpha"
     },
     "devDependencies": {
-        "image-size": "^1.0.1",
+        "image-size": "^1.0.2",
         "npm-run-all": "^4.1.5",
         "pre-commit": "^1.2.2"
     },
