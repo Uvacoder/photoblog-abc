@@ -14,6 +14,33 @@ module.exports = [
     //         icon: 'solid/arrow-right',
     //     }
     // },
+    // {
+    //     date: 'Z',
+    //     image: {
+    //         name: '.jpg',
+    //         alt: '',
+    //     },
+    //     caption: '',
+    //     link: {
+    //         text: '',
+    //         url: '',
+    //         icon: 'solid/arrow-right',
+    //     }
+    // },
+    {
+        date: '2022-06-14Z',
+        image: {
+            name: 'subjects/20220611.jpg',
+            alt: 'The nelson column as a dark outline against a blue sky with an airplan and its vapor trail.',
+        },
+    },
+    {
+        date: '2022-06-12Z',
+        image: {
+            name: 'subjects/20220612-2.jpg',
+            alt: 'A brown squirrel looking directly at the camera.',
+        },
+    },
     {
         date: '2022-03-27Z',
         image: {
